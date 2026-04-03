@@ -1,0 +1,23 @@
+.env
+*.pem
+*.key
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.db
+*.sqlite3
+*.log
+.DS_Store
+credentials/
+
+# Data files (don't commit results or input data)
+results_*.csv
+results_*.json
+input_*.csv
+*.xlsx

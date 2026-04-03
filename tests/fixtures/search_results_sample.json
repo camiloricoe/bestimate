@@ -1,0 +1,62 @@
+{
+  "props": {
+    "pageProps": {
+      "searchPageState": {
+        "cat1": {
+          "searchResults": {
+            "listResults": [
+              {
+                "zpid": "61741482",
+                "id": "61741482",
+                "address": "1234 Oak Avenue, Orlando, FL 32801",
+                "addressStreet": "1234 Oak Avenue",
+                "addressCity": "Orlando",
+                "addressState": "FL",
+                "addressZipcode": "32801",
+                "unformattedPrice": 399900,
+                "beds": 3,
+                "baths": 2.0,
+                "area": 1850,
+                "hdpData": {
+                  "homeInfo": {
+                    "zpid": 61741482,
+                    "zestimate": 385000,
+                    "bedrooms": 3,
+                    "bathrooms": 2.0,
+                    "livingArea": 1850,
+                    "yearBuilt": 1998,
+                    "homeType": "SINGLE_FAMILY"
+                  }
+                }
+              },
+              {
+                "zpid": "61741999",
+                "id": "61741999",
+                "address": "1236 Oak Avenue, Orlando, FL 32801",
+                "addressStreet": "1236 Oak Avenue",
+                "addressCity": "Orlando",
+                "addressState": "FL",
+                "addressZipcode": "32801",
+                "unformattedPrice": 415000,
+                "beds": 4,
+                "baths": 2.5,
+                "area": 2100,
+                "hdpData": {
+                  "homeInfo": {
+                    "zpid": 61741999,
+                    "zestimate": 410000,
+                    "bedrooms": 4,
+                    "bathrooms": 2.5,
+                    "livingArea": 2100,
+                    "yearBuilt": 2001,
+                    "homeType": "SINGLE_FAMILY"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

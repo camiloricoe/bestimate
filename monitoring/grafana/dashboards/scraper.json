@@ -1,0 +1,120 @@
+{
+  "dashboard": {
+    "title": "Property Scraper",
+    "uid": "scraper-main",
+    "timezone": "utc",
+    "refresh": "10s",
+    "panels": [
+      {
+        "title": "Requests/sec",
+        "type": "timeseries",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+        "targets": [
+          {
+            "expr": "rate(scraper_requests_total[5m])",
+            "legendFormat": "{{phase}}"
+          }
+        ]
+      },
+      {
+        "title": "Block Rate",
+        "type": "gauge",
+        "gridPos": {"h": 8, "w": 6, "x": 12, "y": 0},
+        "targets": [
+          {
+            "expr": "rate(scraper_blocks_total[5m]) / rate(scraper_requests_total[5m])"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {"color": "green", "value": 0},
+                {"color": "yellow", "value": 0.1},
+                {"color": "red", "value": 0.2}
+              ]
+            },
+            "max": 1,
+            "unit": "percentunit"
+          }
+        }
+      },
+      {
+        "title": "Completion Rate",
+        "type": "gauge",
+        "gridPos": {"h": 8, "w": 6, "x": 18, "y": 0},
+        "targets": [
+          {
+            "expr": "scraper_properties_completed_total / (scraper_properties_completed_total + scraper_properties_failed_total)"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": 0},
+                {"color": "yellow", "value": 0.7},
+                {"color": "green", "value": 0.9}
+              ]
+            },
+            "max": 1,
+            "unit": "percentunit"
+          }
+        }
+      },
+      {
+        "title": "Properties Scraped (cumulative)",
+        "type": "timeseries",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+        "targets": [
+          {
+            "expr": "scraper_properties_completed_total",
+            "legendFormat": "Completed"
+          },
+          {
+            "expr": "scraper_properties_failed_total",
+            "legendFormat": "Failed"
+          }
+        ]
+      },
+      {
+        "title": "Queue Status",
+        "type": "bargauge",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+        "targets": [
+          {
+            "expr": "scraper_queue_pending",
+            "legendFormat": "Pending"
+          },
+          {
+            "expr": "scraper_queue_in_progress",
+            "legendFormat": "In Progress"
+          }
+        ]
+      },
+      {
+        "title": "Scrape Duration (p95)",
+        "type": "timeseries",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(scraper_duration_seconds_bucket[5m]))",
+            "legendFormat": "{{phase}} p95"
+          }
+        ],
+        "fieldConfig": {"defaults": {"unit": "s"}}
+      },
+      {
+        "title": "Active Proxies",
+        "type": "stat",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+        "targets": [
+          {
+            "expr": "scraper_proxies_active",
+            "legendFormat": "Tier {{tier}}"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "props": {
+    "pageProps": {
+      "componentProps": {
+        "gdpClientCache": {
+          "query_abc123": {
+            "property": {
+              "zpid": 61741482,
+              "address": {
+                "streetAddress": "1234 Oak Avenue",
+                "city": "Orlando",
+                "state": "FL",
+                "zipcode": "32801"
+              },
+              "zestimate": 385000,
+              "price": 399900,
+              "bedrooms": 3,
+              "bathrooms": 2.0,
+              "livingArea": 1850,
+              "lotAreaValue": 0.25,
+              "lotAreaUnits": "acres",
+              "yearBuilt": 1998,
+              "homeType": "SINGLE_FAMILY",
+              "homeStatus": "FOR_SALE",
+              "taxAssessedValue": 310000,
+              "rentZestimate": 2200,
+              "description": "Beautiful 3 bedroom home in downtown Orlando.",
+              "latitude": 28.5383,
+              "longitude": -81.3792
+            }
+          }
+        }
+      }
+    }
+  }
+}
